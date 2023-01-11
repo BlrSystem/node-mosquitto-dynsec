@@ -11,13 +11,14 @@ try {
   await dynsec.connect({
     hostname: "mqtt.example.com",
     username: "foo",
-    password: "bar"
+    password: "bar",
+    clientId: "dynamic_user"
   })
 } catch(e) {
   console.error("Connect error:", e)
 }
 
-const res = await dynsec.createClient({ username: "user1", password: "pass" })
+const res = await dynsec.createClient({ clientId: "dynamic_user", username: "user1", password: "pass" })
 ```
 
 

@@ -1,6 +1,6 @@
 
-import {connect, MqttClient} from "mqtt"
-import {AddRoleACLRequest, CreateClientRequest, GetClientResponse, ListClientsResponse, ListGroupsResponse, ListRequest, ListRolesResponse, RemoveRoleACLRequest} from "./command_types"
+import {connect, MqttClient} from "mqtt";
+import {AddRoleACLRequest, CreateClientRequest, GetClientResponse, ListClientsResponse, ListGroupsResponse, ListRequest, ListRolesResponse, RemoveRoleACLRequest} from "./command_types";
 
 
 export interface ConnectOptions {
@@ -9,6 +9,7 @@ export interface ConnectOptions {
   protocol?: string;
   username?: string;
   password?: string;
+  clientId?: string;
 }
 
 export interface CommandPayload {
@@ -79,10 +80,11 @@ export class MosquittoDynsec {
     const protocol = options.protocol || "mqtt"
     const username = options.username || "admin-user"
     const password = options.password
+    const clientId = options.clientId || "dynsec_" + Math.random().toString(16).substr(2, 8)
 
     const url = `${protocol}://${hostname}:${port}`
 
-    const mqtt = connect(url, {username, password})
+    const mqtt = connect(url, {username, password, clientId})
 
     const responseTopic = "$CONTROL/dynamic-security/" + this.apiVersion + "/response"
 

@@ -1,6 +1,6 @@
 {
-  "name": "mosquitto-dynsec",
-  "version": "1.0.4",
+  "name": "blr-mosquitto-dynsec",
+  "version": "1.0.5",
   "description": "Manage Mosquitto Dynamic Security Plugin via MQTT",
   "main": "dist/index.js",
   "files": [
@@ -14,16 +14,17 @@
     "dev": "tsc -w",
     "test": "mocha"
   },
-  "homepage": "https://github.com/cafe01/node-mosquitto-dynsec#node-mosquitto-dynsec",
+  "homepage": "https://github.com/BlrSystem/node-mosquitto-dynsec.git",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cafe01/node-mosquitto-dynsec.git"
+    "url": "git+https://github.com/BlrSystem/node-mosquitto-dynsec.git"
   },
   "keywords": [
     "mosquitto",
     "dynsec"
   ],
   "author": "Carlos Fernando Avila Gratz",
+  "contributor": "Andrea Padovan",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.0",
