@@ -3,6 +3,8 @@
 
 This is a NodeJS module for managing eclipse-mosquitto Dynamic Security plugin.
 
+We added the clinetId
+
 ```js
 import {MosquittoDynsec} from "mosquitto-dynsec"
 const dynsec = new MosquittoDynsec()
